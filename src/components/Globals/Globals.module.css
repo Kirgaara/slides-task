@@ -1,0 +1,29 @@
+.shape1 {
+  background-image: url('../../assets/Shape 1.svg');
+  position: absolute;
+  left: 70px;
+  top: 744px;
+  width: 58px;
+  height: 12px;
+  z-index: 98;
+}
+
+.homeBtn {
+  background-image: url('../../assets/homeBtn.svg');
+  position: absolute;
+  left: 66px;
+  top: 27px;
+  width: 22px;
+  height: 20px;
+  z-index: 100;
+}
+
+.headerTitle {
+  background-image: url('../../assets/headerTitle.svg');
+  position: absolute;
+  left: 112px;
+  top: 26px;
+  width: 107px;
+  height: 26px;
+  z-index: 99;
+}
