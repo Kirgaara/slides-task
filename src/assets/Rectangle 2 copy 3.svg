@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="626" height="330" viewBox="0 0 626 330">
+  <metadata><?xpacket begin="﻿" id="W5M0MpCehiHzreSzNTczkc9d"?>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.6-c142 79.160924, 2017/07/13-01:06:39        ">
+   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <rdf:Description rdf:about=""/>
+   </rdf:RDF>
+</x:xmpmeta>
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                           
+<?xpacket end="w"?></metadata>
+<defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        filter: url(#filter);
+      }
+    </style>
+    <clipPath id="clip-path">
+      <rect x="-1269" y="-751.5" width="2048" height="1536"/>
+    </clipPath>
+    <filter id="filter" x="-153" y="-236.5" width="1029" height="803" filterUnits="userSpaceOnUse">
+      <feOffset result="offset" dx="5.446" dy="8.387" in="SourceAlpha"/>
+      <feGaussianBlur result="blur" stdDeviation="15.811"/>
+      <feFlood result="flood" flood-color="#9db9c6" flood-opacity="0.39"/>
+      <feComposite result="composite" operator="in" in2="blur"/>
+      <feBlend result="blend" in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g clip-path="url(#clip-path)">
+    <rect id="Rectangle_2_copy_3" data-name="Rectangle 2 copy 3" class="cls-1" x="93" y="6.5" width="526" height="300" rx="80" ry="80"/>
+  </g>
+</svg>
