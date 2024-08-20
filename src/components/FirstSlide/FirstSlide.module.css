@@ -1,5 +1,5 @@
 .layer7 {
-  background-image: url('../../../../assets/Layer 7.svg');
+  background-image: url('../../assets/Layer 7.svg');
   position: absolute;
   left: -89px;
   top: 72px;
@@ -8,28 +8,30 @@
   z-index: 16;
 }
 
-.Layer_8 {
-  background-image: url('../../../../assets/Layer 8.svg');
+.layer8 {
+  background-image: url('../../assets/Layer 8.svg');
   position: absolute;
   left: 861px;
   top: 200px;
   width: 111px;
   height: 114px;
   z-index: 17;
+  animation: circilar-motion 20s linear infinite;
 }
 
-.Layer_5 {
-  background-image: url('../../../../assets/Layer 5.svg');
+.layer5 {
+  background-image: url('../../assets/Layer 5.svg');
   position: absolute;
   left: 744px;
   top: 61px;
   width: 63px;
   height: 58px;
   z-index: 15;
+  animation: move-scaleThree 10s ease-in-out infinite;
 }
 
-.Layer_4_copy_2 {
-  background-image: url('../../../../assets/Layer 4 copy 2.svg');
+.layer4Copy2 {
+  background-image: url('../../assets/Layer 4 copy 2.svg');
   position: absolute;
   left: 917px;
   top: 30px;
@@ -38,8 +40,8 @@
   z-index: 14;
 }
 
-.Layer_4_copy {
-  background-image: url('../../../../assets/Layer 4 copy.svg');
+.layer4Copy {
+  background-image: url('../../assets/Layer 4 copy.svg');
   position: absolute;
   left: 347px;
   top: 631px;
@@ -48,18 +50,19 @@
   z-index: 13;
 }
 
-.Layer_4 {
-  background-image: url('../../../../assets/Layer 4.svg');
+.layer4 {
+  background-image: url('../../assets/Layer 4.svg');
   position: absolute;
   left: 542px;
   top: 641px;
   width: 228px;
   height: 225px;
   z-index: 12;
+  animation: move-scaleSix 10s ease-in-out infinite;
 }
 
-.pink_sperm_1 {
-  background-image: url('../../../../assets/pink_sperm_1.svg');
+.pinkSperm1 {
+  background-image: url('../../assets/pink_sperm_1.svg');
   position: absolute;
   left: 432px;
   top: 155px;
@@ -68,18 +71,19 @@
   z-index: 11;
 }
 
-.bakti_1 {
-  background-image: url('../../../../assets/bakti_1.svg');
+.bakti1 {
+  background-image: url('../../assets/bakti_1.svg');
   position: absolute;
   left: 22px;
   top: 503px;
   width: 74px;
   height: 72px;
   z-index: 4;
+  animation: move-diagonalFive 4s linear infinite;
 }
 
-.pink_sperm {
-  background-image: url('../../../../assets/pink_sperm.svg');
+.pinkSperm {
+  background-image: url('../../assets/pink_sperm.svg');
   position: absolute;
   left: -134px;
   top: 593px;
@@ -89,7 +93,7 @@
 }
 
 .btn {
-  background-image: url('../../../../assets/btn.svg');
+  background-image: url('../../assets/btn.svg');
   position: absolute;
   left: 627px;
   top: 465px;
@@ -102,8 +106,8 @@
   cursor: pointer;
 }
 
-.helo_txt {
-  background-image: url('../../../../assets/helo_txt.svg');
+.heloTxt {
+  background-image: url('../../assets/helo_txt.svg');
   position: absolute;
   left: 69px;
   top: 168px;
@@ -113,7 +117,7 @@
 }
 
 .title {
-  background-image: url('../../../../assets/title.svg');
+  background-image: url('../../assets/title.svg');
   position: absolute;
   left: 68px;
   top: 229px;
@@ -122,21 +126,14 @@
   z-index: 6;
 }
 
-@keyframes move-circleSeven {
+@keyframes circilar-motion {
   from {
-    transform: rotate(0turn) translateY(-50px) translateY(70%) rotate(1turn);
+    transform: rotate(0turn) translateY(-50px) translateY(70%) rotate(1turn)
+      rotate(0deg);
   }
   to {
-    transform: rotate(1turn) translateY(-50px) translateY(70%) rotate(0turn);
-  }
-}
-
-@keyframes rotate-image {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(-360deg);
+    transform: rotate(1turn) translateY(-50px) translateY(70%) rotate(0turn)
+      rotate(-360deg);
   }
 }
 
