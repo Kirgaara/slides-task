@@ -1,7 +1,6 @@
 .bg {
   background-image: url('./assets/bg.svg');
   position: absolute;
-  left: -41px;
   top: 0px;
   width: 3080px;
   height: 768px;

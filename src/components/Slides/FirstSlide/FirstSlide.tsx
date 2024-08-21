@@ -2,9 +2,10 @@ import styles from './FirstSlide.module.css';
 
 interface FirstSlideProps {
   nextSlide: () => void;
+  className?: string;
 }
 
-const FirstSlide = ({ nextSlide }: FirstSlideProps) => {
+const FirstSlide = ({ nextSlide, className }: FirstSlideProps) => {
   return (
     <>
       <div className={styles.layer7} />

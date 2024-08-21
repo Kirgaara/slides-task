@@ -1,7 +1,9 @@
 import { useState } from 'react';
-import FirstSlide from './components/FirstSlide/FirstSlide';
+import FirstSlide from './components/Slides/FirstSlide/FirstSlide';
 import cls from './App.module.css';
 import Globals from './components/Globals/Globals';
+import SecondSlide from './components/Slides/SecondSlide/SecondSlide';
+import Slides from './components/Slides/Slides';
 
 const App = () => {
   const [slide, setSlide] = useState(0);
@@ -49,25 +51,23 @@ const App = () => {
   };
   const getBackgroundPosition = () => {
     if (slide === 0) {
-      return '0 0';
+      return '-82px 0';
     }
     if (slide === 1) {
-      return '-1076px 0';
+      return '-1117px 0';
     }
-    return '-2011px 0';
+    return '-2052px 0';
   };
 
   return (
     <div
+      className={cls.bg}
+      style={{ backgroundPosition: getBackgroundPosition() }}
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
     >
-      <div
-        className={cls.bg}
-        style={{ backgroundPosition: getBackgroundPosition() }}
-      />
-      <FirstSlide nextSlide={goToNextSlide} />
+      <Slides nextSlide={goToNextSlide} slide={slide} />
       <Globals homeBtn={goToFirstSlide} />
     </div>
   );

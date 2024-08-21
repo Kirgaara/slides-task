@@ -1,0 +1,11 @@
+.slider {
+  transition: transform 0.5s ease-in-out;
+  height: 768px;
+  width: 3072px;
+}
+
+.slide {
+  min-width: 100vw;
+  height: 100%;
+  position: relative;
+}
