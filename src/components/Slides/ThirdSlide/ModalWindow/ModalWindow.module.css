@@ -1,0 +1,125 @@
+.active {
+  display: block;
+}
+
+.inactive {
+  display: none;
+}
+
+.overlay {
+  width: 1024px;
+  height: 768px;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.content {
+  opacity: 1;
+}
+
+.txtBack {
+  background-image: url('../../../../assets/modalTxtBg.svg');
+  position: absolute;
+  left: 140px;
+  top: 124px;
+  width: 823px;
+  height: 573px;
+  z-index: 39;
+}
+
+.titleSmall {
+  position: absolute;
+  left: 353px;
+  top: 169px;
+  width: 346px;
+  height: 25px;
+  z-index: 40;
+  font-size: 27px;
+  font-family: 'DINPro';
+  color: rgb(36, 36, 36);
+  text-transform: uppercase;
+  line-height: 1.2;
+  text-align: left;
+}
+
+.textBox {
+  margin-top: 210px;
+  margin-left: 220px;
+  height: 310px;
+}
+
+.point {
+  width: 485px;
+  margin-bottom: 30px;
+}
+
+.index {
+  font-size: 25px;
+  font-family: 'Gilroy-Bold', sans-serif;
+  color: rgb(140, 201, 232);
+  font-weight: bold;
+  line-height: 1.2;
+  z-index: 73;
+}
+
+.text {
+  font-size: 25px;
+  font-family: 'DINPro';
+  color: rgb(46, 46, 46);
+  line-height: 1.2;
+  z-index: 70;
+}
+
+.modalBtnPrev {
+  background-image: url('../../../../assets/modalBtnPrev.svg');
+  position: absolute;
+  left: 353px;
+  top: 646px;
+  width: 10px;
+  height: 15px;
+  z-index: 93;
+}
+
+.modalBtnNext {
+  background-image: url('../../../../assets/modalBtnNext.svg');
+  position: absolute;
+  left: 433px;
+  top: 646px;
+  width: 10px;
+  height: 15px;
+  z-index: 94;
+}
+
+.modalPageIndicator {
+  width: 8px;
+  height: 8px;
+  z-index: 90;
+}
+
+.modalPageInactive {
+  border-width: 1.5px;
+  border-color: rgb(0, 0, 0);
+  border-style: solid;
+  border-radius: 50%;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  width: 8px;
+  height: 8px;
+}
+
+.modalPageActive {
+  border-radius: 50%;
+  background-color: rgb(252, 109, 169);
+  position: absolute;
+  width: 11px;
+  height: 11px;
+}
+
+.btnClose {
+  background-image: url('../../../../assets/modalBtnClose.svg');
+  position: absolute;
+  left: 897px;
+  top: 156px;
+  width: 34px;
+  height: 35px;
+  z-index: 67;
+}

@@ -45,9 +45,7 @@ const App = () => {
   };
 
   const goToNextSlide = () => {
-    if (slide < totalSlide - 1) {
-      setSlide(slide + 1);
-    }
+    setSlide(1);
   };
   const getBackgroundPosition = () => {
     if (slide === 0) {
