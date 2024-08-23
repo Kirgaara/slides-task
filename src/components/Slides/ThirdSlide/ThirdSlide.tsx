@@ -9,11 +9,9 @@ interface ThirdSlideProps {
 const ThirdSlide = ({ currentSlide }: ThirdSlideProps) => {
   const [modalActive, setModalActive] = useState(false);
 
-  useEffect(() => {
-    if (!currentSlide) {
-      setModalActive(false);
-    }
-  }, [modalActive]);
+  if (!currentSlide && modalActive) {
+    useState(false);
+  }
 
   return (
     <div className={cls.wrapper}>

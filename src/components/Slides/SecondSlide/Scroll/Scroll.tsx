@@ -1,9 +1,44 @@
-import { useRef, useEffect } from 'react';
+import {
+  useRef,
+  useEffect,
+  useState,
+  DetailedHTMLProps,
+  HTMLAttributes,
+} from 'react';
 import scroll from './Scroll.module.css';
 
 export default function Scroll() {
   const textScrollRef = useRef(null);
   const pinkScrollRef = useRef(null);
+
+  const [scrollHeight, setScrollHeight] = useState(240);
+  const [textScroll, setTextScroll] = useState(0);
+  const [isDragging, setIsDraging] = useState(false);
+
+  const initialOffset = 240;
+  let startDragY: number;
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setIsDraging(true);
+    startDragY = e.touches[0].clientY;
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (!isDragging) return;
+
+    let mousePosition = e.touches[0].clientY - 50;
+
+    if (mousePosition > initialOffset && mousePosition < 588) {
+      setScrollHeight(mousePosition);
+      const scrollTop = ((scrollHeight - initialOffset) * 348) / 580;
+      setTextScroll(scrollTop);
+      textScrollRef.current.scrollTop = textScroll;
+    }
+  };
+
+  const handleTouchEnd = () => {
+    setIsDraging(false);
+  };
 
   useEffect(() => {
     const textScrollElem = textScrollRef.current;
@@ -16,6 +51,7 @@ export default function Scroll() {
     const handleTouchStart = (e: TouchEvent) => {
       isDragging = true;
       startDragY = e.touches[0].clientY;
+      console.log(textScrollElem.scrollTop);
       startScrollTop = textScrollElem.scrollTop;
     };
 
@@ -43,15 +79,24 @@ export default function Scroll() {
       isDragging = false;
     };
 
-    pinkScrollElem.addEventListener('touchstart', handleTouchStart);
-    document.addEventListener('touchmove', handleTouchMove);
-    document.addEventListener('touchend', handleTouchEnd);
+    // pinkScrollElem.addEventListener('touchstart', handleTouchStart);
+    // document.addEventListener('touchmove', handleTouchMove);
+    // document.addEventListener('touchend', handleTouchEnd);
   }, []);
 
   return (
-    <div className={scroll.wrapper}>
+    <div
+      className={scroll.wrapper}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+    >
       <div className={scroll.title}>ТЕКСТ СООБЩЕНИЯ</div>
-      <div className={scroll.pinkScroll} ref={pinkScrollRef}></div>
+      <div
+        className={scroll.pinkScroll}
+        onTouchStart={handleTouchStart}
+        ref={pinkScrollRef}
+        style={{ top: scrollHeight }}
+      ></div>
       <div className={scroll.rectangle1} />
 
       <div className={scroll.txtBack}>

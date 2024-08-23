@@ -1,11 +1,4 @@
-import React, {
-  ReactNode,
-  useCallback,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-} from 'react';
+import React, { useMemo, useState } from 'react';
 import cls from './ModalWindow.module.css';
 
 interface ModalWindowProps {

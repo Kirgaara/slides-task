@@ -1,16 +1,16 @@
 import { useState } from 'react';
-import FirstSlide from './components/Slides/FirstSlide/FirstSlide';
 import cls from './App.module.css';
 import Globals from './components/Globals/Globals';
-import SecondSlide from './components/Slides/SecondSlide/SecondSlide';
 import Slides from './components/Slides/Slides';
 
 const App = () => {
   const [slide, setSlide] = useState(0);
   const totalSlide = 3;
   const [touchStart, setTouchStart] = useState(0);
-  const [touchEnd, setTouchEnd] = useState(0);
   const [isSwiping, setIsSwiping] = useState(false);
+  const [bgPosition, setBgPosition] = useState(-36);
+
+  let touchEndNew = 0;
 
   const handleTouchStart = (e: React.TouchEvent) => {
     if (e.type === 'touchstart') {
@@ -22,19 +22,23 @@ const App = () => {
   const handleTouchMove = (e: React.TouchEvent) => {
     if (!isSwiping) return;
     if (e.type === 'touchmove') {
-      setTouchEnd(e.targetTouches[0].clientX);
+      touchEndNew = e.targetTouches[0].clientX;
     }
   };
 
-  const handleTouchEnd = () => {
-    if (!isSwiping) return;
-    if (touchStart - touchEnd > 75) {
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (!isSwiping || !touchEndNew) return;
+    // const touchEndNew = e.touches[0].clientX;
+    // console.log(e.target);
+    if (touchStart - touchEndNew > 75) {
       if (slide < totalSlide - 1) {
         setSlide(slide + 1);
+        setBgPosition(bgPosition - 1010);
       }
-    } else if (touchStart - touchEnd < -75) {
+    } else if (touchStart - touchEndNew < -75) {
       if (slide > 0) {
         setSlide(slide - 1);
+        setBgPosition(bgPosition + 1010);
       }
     }
     setIsSwiping(false);
@@ -42,25 +46,18 @@ const App = () => {
 
   const goToFirstSlide = () => {
     setSlide(0);
+    setBgPosition(-36);
   };
 
   const goToNextSlide = () => {
     setSlide(1);
-  };
-  const getBackgroundPosition = () => {
-    if (slide === 0) {
-      return '-82px 0';
-    }
-    if (slide === 1) {
-      return '-1117px 0';
-    }
-    return '-2052px 0';
+    setBgPosition(-1046);
   };
 
   return (
     <div
       className={cls.bg}
-      style={{ backgroundPosition: getBackgroundPosition() }}
+      style={{ backgroundPosition: bgPosition + 'px 0' }}
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
