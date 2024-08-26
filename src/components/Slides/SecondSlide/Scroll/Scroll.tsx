@@ -9,7 +9,6 @@ import scroll from './Scroll.module.css';
 
 export default function Scroll() {
   const textScrollRef = useRef(null);
-  const pinkScrollRef = useRef(null);
 
   const [scrollHeight, setScrollHeight] = useState(240);
   const [textScroll, setTextScroll] = useState(0);
@@ -40,50 +39,6 @@ export default function Scroll() {
     setIsDraging(false);
   };
 
-  useEffect(() => {
-    const textScrollElem = textScrollRef.current;
-    const pinkScrollElem = pinkScrollRef.current;
-
-    const initialOffset = 240;
-    let isDragging = false;
-    let startDragY: number, startScrollTop: number;
-
-    const handleTouchStart = (e: TouchEvent) => {
-      isDragging = true;
-      startDragY = e.touches[0].clientY;
-      console.log(textScrollElem.scrollTop);
-      startScrollTop = textScrollElem.scrollTop;
-    };
-
-    const handleTouchMove = (e: TouchEvent) => {
-      if (!isDragging) return;
-      e.preventDefault();
-
-      const deltaY = e.touches[0].clientY - startDragY;
-      const maxScroll = 348;
-      const scrollPercentage =
-        (startScrollTop + deltaY) /
-        (textScrollElem.scrollHeight - textScrollElem.clientHeight);
-
-      if (scrollPercentage >= 0 && scrollPercentage <= 1) {
-        pinkScrollElem.style.top = `${
-          initialOffset + scrollPercentage * maxScroll
-        }px`;
-        textScrollElem.scrollTop =
-          scrollPercentage *
-          (textScrollElem.scrollHeight - textScrollElem.clientHeight);
-      }
-    };
-
-    const handleTouchEnd = () => {
-      isDragging = false;
-    };
-
-    // pinkScrollElem.addEventListener('touchstart', handleTouchStart);
-    // document.addEventListener('touchmove', handleTouchMove);
-    // document.addEventListener('touchend', handleTouchEnd);
-  }, []);
-
   return (
     <div
       className={scroll.wrapper}
@@ -94,7 +49,6 @@ export default function Scroll() {
       <div
         className={scroll.pinkScroll}
         onTouchStart={handleTouchStart}
-        ref={pinkScrollRef}
         style={{ top: scrollHeight }}
       ></div>
       <div className={scroll.rectangle1} />
