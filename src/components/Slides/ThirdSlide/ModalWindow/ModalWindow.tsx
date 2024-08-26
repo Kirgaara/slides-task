@@ -6,8 +6,6 @@ interface ModalWindowProps {
   onClose?: () => void;
 }
 
-const ANIMATION_DELAY = 300;
-
 const ModalWindow = (props: ModalWindowProps) => {
   const { isOpen, onClose } = props;
 

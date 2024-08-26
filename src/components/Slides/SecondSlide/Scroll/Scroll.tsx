@@ -1,10 +1,4 @@
-import {
-  useRef,
-  useEffect,
-  useState,
-  DetailedHTMLProps,
-  HTMLAttributes,
-} from 'react';
+import { useRef, useState } from 'react';
 import scroll from './Scroll.module.css';
 
 export default function Scroll() {
@@ -14,12 +8,8 @@ export default function Scroll() {
   const [textScroll, setTextScroll] = useState(0);
   const [isDragging, setIsDraging] = useState(false);
 
-  const initialOffset = 240;
-  let startDragY: number;
-
-  const handleTouchStart = (e: React.TouchEvent) => {
+  const handleTouchStart = () => {
     setIsDraging(true);
-    startDragY = e.touches[0].clientY;
   };
 
   const handleTouchMove = (e: React.TouchEvent) => {
@@ -27,9 +17,9 @@ export default function Scroll() {
 
     let mousePosition = e.touches[0].clientY - 50;
 
-    if (mousePosition > initialOffset && mousePosition < 588) {
+    if (mousePosition > 240 && mousePosition < 588) {
       setScrollHeight(mousePosition);
-      const scrollTop = ((scrollHeight - initialOffset) * 348) / 580;
+      const scrollTop = ((scrollHeight - 240) * 348) / 580;
       setTextScroll(scrollTop);
       textScrollRef.current.scrollTop = textScroll;
     }

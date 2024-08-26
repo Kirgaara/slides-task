@@ -28,8 +28,6 @@ const App = () => {
 
   const handleTouchEnd = (e: React.TouchEvent) => {
     if (!isSwiping || !touchEndNew) return;
-    // const touchEndNew = e.touches[0].clientX;
-    // console.log(e.target);
     if (touchStart - touchEndNew > 75) {
       if (slide < totalSlide - 1) {
         setSlide(slide + 1);
